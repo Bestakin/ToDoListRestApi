@@ -38,12 +38,13 @@ public class TaskController {
         return taskService.findById(id);
     }
 
-    //Create new Task
+    // Create new Task
     @PostMapping
     public Task createTask(@RequestBody Task task){
-       return taskService.save(task);
+        return taskService.save(task);
     }
-    //Update an existing Task
+
+    // Update an existing Task
     @PutMapping("/{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task task){
         Task existingTask = taskService.findById(id);
